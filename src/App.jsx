@@ -81,10 +81,7 @@ const App = () => {
           />
           <div>
             <p className="relative bg-white border border-gray-400 rounded-4xl p-6 sm:p-8 shadow-md max-w-xl text-lg sm:text-xl leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-              commodo consequat.
+              I can also help with video editing and VFX, bringing your raw footage to life using my expert editing and storytelling skills. Whether it's for YouTube, social media, or personal projects, I ensure your videos are polished, engaging, and ready to captivate your audience.
               {/* Right arrow */}
               <span className="absolute top-8 -right-4 sm:-right-6 w-0 h-0 border-t-[12px] sm:border-t-[16px] border-t-transparent border-b-[12px] sm:border-b-[16px] border-b-transparent border-l-[14px] sm:border-l-[20px] border-l-white drop-shadow-md"></span>
             </p>
