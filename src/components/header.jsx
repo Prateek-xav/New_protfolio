@@ -11,7 +11,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-[#1f2937] rounded-2xl text-white shadow-md h-auto py-2">
+    <header className="bg-white rounded-2xl text-black shadow-md h-auto py-2">
       <div className="container mx-auto flex justify-center">
         <nav
           className="flex flex-wrap justify-center gap-2 sm:gap-4 w-full"
