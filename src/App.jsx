@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/header.jsx';
+import Projects from './components/projects.jsx';
 import './index.css';
+import './App.css';
 import Photo1 from './assets/Photo1.jpg';
 import Photo2 from './assets/Photo2.jpg';
+import Photo3 from './assets/Photo3.jpg';
 
 const App = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -14,6 +17,12 @@ const App = () => {
   }, []);
 
   const blurAmount = Math.min(scrollY / 50, 10);
+  const viewportHeight = window.innerHeight;
+  const halfViewport = viewportHeight / 2;
+
+  const scaleAmount = scrollY <= halfViewport
+    ? 0
+    : Math.min((scrollY - halfViewport) / halfViewport, 1);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-800 text-white">
@@ -27,10 +36,10 @@ const App = () => {
         className="fixed inset-0 flex flex-col items-center justify-center text-center pointer-events-none px-4"
         style={{
           filter: `blur(${blurAmount}px)`,
-          transition: 'filter 0.2s ease',
+          transition: 'filter 0.3s ease',
         }}
       >
-        <h1 className="font-['Dongle'] font-extrabold leading-none text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem]">
+        <h1 className="font-['Dongle'] font-extrabold leading-none text-[8rem] sm:text-[8rem] md:text-[10rem] lg:text-[20em]">
           PRATEEK
         </h1>
         <p className="mt-4 text-lg sm:text-xl md:text-2xl max-w-2xl">
@@ -39,12 +48,18 @@ const App = () => {
       </div>
 
       {/* Spacer */}
-      <div className="h-screen"></div>
+      <div className="h-screen" id="home"></div>
 
       {/* Main content */}
       <main className="flex-1 p-6 sm:p-10 space-y-20">
         {/* Section 1 */}
-        <div className="flex flex-col md:flex-row items-start md:space-x-10 space-y-6 md:space-y-0">
+        <div
+          className="flex flex-col md:flex-row items-start md:space-x-10 space-y-6 md:space-y-0"
+          style={{
+            transform: `scale(${1 - scaleAmount * 0.1})`,
+            transition: 'transform 0.2s ease',
+          }}
+        >
           <img
             src={Photo1}
             alt="Profile"
@@ -87,9 +102,11 @@ const App = () => {
             </p>
           </div>
         </div>
+
+        {/* Section 3 */}
         <div className="flex flex-col md:flex-row items-start md:space-x-10 space-y-6 md:space-y-0">
           <img
-            src={Photo1}
+            src={Photo3}
             alt="Profile"
             className="w-60 h-60 sm:w-72 sm:h-72 md:w-80 md:h-80 object-cover rounded-full shadow-lg"
           />
@@ -110,6 +127,9 @@ const App = () => {
             </p>
           </div>
         </div>
+
+        {/* Projects Section */}
+        <Projects />
       </main>
     </div>
   );
