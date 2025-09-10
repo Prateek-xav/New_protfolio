@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
+import project1 from '../assets/project1.jpg';
+import project3 from '../assets/project3.jpg';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   const projectData = [
-    { title: 'Portfolio Website', desc: 'A responsive personal portfolio built with React & Tailwind.', img: '/assets/project1.jpg' },
+    { title: 'Portfolio Website', desc: 'A responsive personal portfolio built with React & Tailwind.', img: project1 },
     { title: 'Ocular Disease Detection', desc: 'AI model to detect eye diseases from images.', img: '/assets/project2.jpg' },
-    { title: 'Push-Up Counter', desc: 'Pose estimation to count reps using MediaPipe.', img: '/assets/project3.jpg' },
+    { title: 'Push-Up Counter', desc: 'Pose estimation to count reps using MediaPipe.', img: project3 },
   ];
 
   useEffect(() => {

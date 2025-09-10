@@ -88,7 +88,11 @@ const App = () => {
         </div>
 
         {/* Section 2 */}
-        <div className="flex flex-col md:flex-row-reverse items-start md:space-x-10 space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row-reverse items-start md:space-x-10 space-y-6 md:space-y-0"
+        style={{
+            transform: `scale(${1 - scaleAmount * 0.1})`,
+            transition: 'transform 0.2s ease',
+          }}>
           <img
             src={Photo2}
             alt="Profile 2"
@@ -104,7 +108,11 @@ const App = () => {
         </div>
 
         {/* Section 3 */}
-        <div className="flex flex-col md:flex-row items-start md:space-x-10 space-y-6 md:space-y-0">
+        <div className="flex flex-col md:flex-row items-start md:space-x-10 space-y-6 md:space-y-0"
+        style={{
+            transform: `scale(${1 - scaleAmount * 0.1})`,
+            transition: 'transform 0.2s ease',
+          }}>
           <img
             src={Photo3}
             alt="Profile"
